@@ -1,0 +1,17 @@
+module.exports = {
+  type: 'autos',
+  brand: 'acura',
+  model: 'ilx',
+  subtype: 'sedan',
+  year: '2018',
+  state: 'nuevo leon',
+  city: 'monterrey',
+  travel: '20000',
+  mileageType: 'kms.',
+  phone: '3388495248',
+  price: '50000',
+  transaction: 'negociable',
+  description: 'Carro super bueno, esta como nuevo',
+  images: '',
+  package: 'free',
+};

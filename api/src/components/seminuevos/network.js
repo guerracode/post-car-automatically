@@ -5,7 +5,7 @@ const controller = require('./controller');
 
 router.get('/', async (req, res, next) => {
   try {
-    await controller.takeScreenshot();
+    await controller.postCar();
     res.send('Screenshot taken correctly');
   } catch (error) {
     next(error);
