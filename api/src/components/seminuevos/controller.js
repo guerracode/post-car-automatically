@@ -18,8 +18,9 @@ const postCar = async (userData) => {
 
   try {
     // Open Browser
-    const browser = await puppeteer.launch({ defaultViewport: null, headless: true });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
+    await page.setViewport({ width: 1920, height: 1080 });
     await page.goto(url);
     // Login
     await page.type('#email_login', config.seminuevos.email);

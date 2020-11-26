@@ -8,19 +8,15 @@ import {
   CircularProgress,
 } from '@material-ui/core';
 import '../assets/styles/App.css';
-import Header from './Header';
 import useStyles from '../assets/styles/SeminuevosStyles';
 
 const initialFormData = Object.freeze({
   price: '',
   description: '',
-  screenshot: '',
 });
 
 const SemiNuevos = () => {
   const [formData, updateFormData] = React.useState(initialFormData);
-
-  // React.useEffect(() => {}, [formData]);
 
   const handleChange = e => {
     updateFormData({
@@ -33,9 +29,9 @@ const SemiNuevos = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    updateFormData({ loader: true });
-
+    // Activate loader
+    updateFormData({ loader: true, screenshot: true });
+    // Maker request to the server
     fetch('http://localhost:3000/api/seminuevos', {
       method: 'POST',
       headers: {
@@ -46,21 +42,24 @@ const SemiNuevos = () => {
         description: formData.description,
       }),
     })
-      .then(response => response.blob())
-      .catch(error => updateFormData(initialFormData))
+      .then(response => {
+        if (response.ok) {
+          return response.blob();
+        }
+        updateFormData({ error: true });
+      })
       .then(images => {
-        // Then create a local URL for that image and print it
+        // Create a local URL for the image and print it
         var image = URL.createObjectURL(images);
-        setTimeout(() => {
-          updateFormData({ screenshot: image });
-        }, 5000);
-        // console.log(formData);
+        updateFormData({ screenshot: image });
+      })
+      .catch(() => {
+        updateFormData({ error: true });
       });
   };
 
   const handleBack = e => {
     e.preventDefault();
-    console.log('handleBack', formData);
     updateFormData(initialFormData);
   };
 
@@ -68,12 +67,11 @@ const SemiNuevos = () => {
 
   return (
     <>
-      <Header />
       <Box width={800} height={800} margin='auto'>
         <Typography variant='h4' color='primary' align='center' paragraph>
           seminuevos.com
         </Typography>
-        {formData.screenshot === '' ? (
+        {!formData.screenshot ? (
           <form
             className={classes.form}
             noValidate
@@ -105,6 +103,16 @@ const SemiNuevos = () => {
             >
               Publicar
             </Button>
+            {formData.error && (
+              <Typography
+                variant='body1'
+                color='secondary'
+                align='center'
+                paragraph
+              >
+                Algo salio mal, favor de intentar de nuevo.
+              </Typography>
+            )}
           </form>
         ) : formData.loader ? (
           <Box className={classes.loaderContainer}>
