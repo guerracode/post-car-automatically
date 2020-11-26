@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors') 
 
 const app = express();
 
@@ -8,6 +9,8 @@ const { logErrors, errorHandler, wrapErrors } = require('./src/utils/errorHandle
 const notFoundHandler = require('./src/utils/notFoundHandler');
 
 const { port } = config;
+
+app.use(cors())
 
 // server config
 app.use(express.json());
