@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h1 align="center">Post car Automatically</h1>
+  <h1 align="center">Post Car Automatically</h1>
 
   <p align="center">
     Projecto creado por: </br> <strong> Jose Luis Chavez Guerra </strong>
