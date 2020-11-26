@@ -4,16 +4,16 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h1 align="center">Post Cart Automatically</h1>
+  <h1 align="center">Post car Automatically</h1>
 
   <p align="center">
     Projecto creado por: </br> <strong> Jose Luis Chavez Guerra </strong>
     <br />
     <br />
     ·
-    <a href="https://github.com/guerracode/post-cart-automatically/issues">Report Bug</a>
+    <a href="https://github.com/guerracode/post-car-automatically/issues">Report Bug</a>
     ·
-    <a href="https://github.com/guerracode/post-cart-automatically/issues">Request Feature</a>
+    <a href="https://github.com/guerracode/post-car-automatically/issues">Request Feature</a>
   </p>
 </p>
 
@@ -54,13 +54,13 @@ El proyecto se encuentra como un monorepo, por lo cual la API y la pagina estan 
 - Clonar el repositorio.
 
 ```bash
-  git clone https://github.com/guerracode/post-cart-automatically.git
+  git clone https://github.com/guerracode/post-car-automatically.git
 ```
 
 - Ingresar a la carpeta.
 
 ```bash
-  cd post-cart-automatically
+  cd post-car-automatically
 ```
 
 - Abrir otra pestaña de la terminal en la misma carpeta.
@@ -109,7 +109,7 @@ Contributions are what make the open source community such an amazing place to b
 
 Jose Luis Chavez - [@guerracode](https://twitter.com/guerracode) - josephsiul15@gmail.com
 
-Project Link: [GitHub](https://github.com/guerracode/post-cart-automatically)
+Project Link: [GitHub](https://github.com/guerracode/post-car-automatically)
 
 <!-- LINKS -->
 
